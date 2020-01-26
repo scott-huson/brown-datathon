@@ -2,9 +2,9 @@
 
 ## Task
 
-We are tasked to provide the segmentation of cell boundaries within mouse brain by training a model on the dataset including fruit fly brain image.
+We are tasked to provide the segmentation of cell boundaries within a mouse brain by training a model on the dataset including fruit fly brain images.
 
-(to do) : insert images of origibal and segmentation mask
+(to do) : Insert images of original and segmentation mask.
 
 ## Data
 
@@ -16,10 +16,10 @@ true positive / (true positive + false positive + false negative)
 
 
  
-### training 
+### Training 
 
 * fruit fly image and segmentation mask pair
-#### data augmentation
+#### Data Augmentation
 
 In order to generalize better, we applied data augmentation techniques, which are proven to be effective on biomedical image data.
 
@@ -28,9 +28,9 @@ In order to generalize better, we applied data augmentation techniques, which ar
 * random contrast and brightness change
 * flip
 
-Then, in order not to have blank space as a result of these transformation, we radomly cropped the images to 256 x 256.
+Then, in order not to have blank space as a result of these transformation, we randomly cropped the images to 256 x 256.
 
-### test and validation 
+### Test and Validation 
 * mouse brain image
 
 ## Model
@@ -45,8 +45,8 @@ In order to improve the performance we incorporated couple of changes below.
 
 
 * Modified the encoder to Deep Residual Pyramid Net
-* incorporated spatial and channelwise squeeze and excitation block
-* optional: ShakeDrop regularization technique to see if it generalizes well
+* Incorporated spatial and channelwise squeeze and excitation block
+* Optional: ShakeDrop regularization technique to see if it generalizes well
 
 ## Result
 
@@ -89,11 +89,11 @@ This is presumably because the distribution of the dataset is so different.
 
 Actually, we observed that when we included the test images in the training set, the performance improved dramatically.
 
-We tried to address this issue by incorporating further regularization techniques, suchg as shakedrop architecture.
+We tried to address this issue by incorporating further regularization techniques, such as shakedrop architecture.
 
 However, we did not observe significant improvement from there. 
 
 
 ## Challenges and future direction
-The biggest challenge is the poor generalization.  
+The biggest challenge is the poor generalization. Finding additional datasets from different animals would generalize the model to mice.  
 
